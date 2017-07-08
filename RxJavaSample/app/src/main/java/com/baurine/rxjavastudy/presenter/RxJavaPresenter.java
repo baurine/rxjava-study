@@ -36,11 +36,17 @@ public class RxJavaPresenter {
                         return integer > 5;
                     }
                 })
-                .map(new Func1<Integer, Integer>() {
+                // .map(new Func1<Integer, Integer>() {
+                //     @Override
+                //     public Integer call(Integer integer) {
+                //         Log.i(TAG, "Map: " + integer + " * 10 --> " + (integer * 10));
+                //         return integer * 10;
+                //     }
+                // })
+                .flatMap(new Func1<Integer, Observable<Integer>>() {
                     @Override
-                    public Integer call(Integer integer) {
-                        Log.i(TAG, "Map: " + integer + " * 10 --> " + (integer * 10));
-                        return integer * 10;
+                    public Observable<Integer> call(Integer integer) {
+                        return Observable.just(integer*10);
                     }
                 })
                 .reduce(0, new Func2<Integer, Integer, Integer>() {
