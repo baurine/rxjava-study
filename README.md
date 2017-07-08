@@ -2,4 +2,4 @@
 
 ## Note
 
-1. [RxJava Note](./note/rxjava-note.md)
+1. [RxJava 1.x Note](./note/rxjava-1.x-note.md)
