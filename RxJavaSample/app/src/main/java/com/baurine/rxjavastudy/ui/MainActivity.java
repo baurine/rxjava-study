@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_test_1:
-                presenter.test1();
+            case R.id.btn_test_basic:
+                presenter.testBasic();
                 break;
         }
     }

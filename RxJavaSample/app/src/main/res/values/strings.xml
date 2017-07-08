@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">RxJava Study</string>
-    <string name="test_1">Test Filter->Map->Reduce</string>
+    <string name="test_basic">Test Filter->Map->Reduce</string>
     <string name="result">Result:\n%s</string>
 </resources>

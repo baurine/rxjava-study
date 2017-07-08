@@ -26,7 +26,7 @@ public class RxJavaPresenter {
     }
 
     ////////////////////////////////////////
-    public void test1() {
+    public void testBasic() {
         Integer[] numbers = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
         Observable.from(numbers)
                 .filter(new Func1<Integer, Boolean>() {
