@@ -9,17 +9,17 @@ import com.baurine.rxjavastudy.R;
 import com.baurine.rxjavastudy.presenter.RxJavaPresenter;
 
 public class MainActivity extends AppCompatActivity
-        implements RxJavaPresenter.ResultView {
+        implements ResultView {
 
     private TextView tvResult;
-    private RxJavaPresenter presenter;
+    private RxJavaPresenter rxJavaPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        presenter = new RxJavaPresenter(this);
+        rxJavaPresenter = new RxJavaPresenter(this);
         initViews();
     }
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_test_basic:
-                presenter.testBasic();
+                rxJavaPresenter.testBasic();
                 break;
         }
     }

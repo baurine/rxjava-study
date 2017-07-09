@@ -2,6 +2,8 @@ package com.baurine.rxjavastudy.presenter;
 
 import android.util.Log;
 
+import com.baurine.rxjavastudy.ui.ResultView;
+
 import rx.Observable;
 import rx.functions.Action1;
 import rx.functions.Func1;
@@ -13,10 +15,6 @@ import rx.functions.Func2;
 
 public class RxJavaPresenter {
     private static final String TAG = "RxJavaPresenter";
-
-    public interface ResultView {
-        void showResult(String result);
-    }
 
     private ResultView resultView;
 
@@ -36,13 +34,13 @@ public class RxJavaPresenter {
                         return integer > 5;
                     }
                 })
-                // .map(new Func1<Integer, Integer>() {
-                //     @Override
-                //     public Integer call(Integer integer) {
-                //         Log.i(TAG, "Map: " + integer + " * 10 --> " + (integer * 10));
-                //         return integer * 10;
-                //     }
-                // })
+                .map(new Func1<Integer, Integer>() {
+                    @Override
+                    public Integer call(Integer integer) {
+                        Log.i(TAG, "Map: " + integer + " * 10 --> " + (integer * 10));
+                        return integer * 10;
+                    }
+                })
                 .flatMap(new Func1<Integer, Observable<Integer>>() {
                     @Override
                     public Observable<Integer> call(Integer integer) {
